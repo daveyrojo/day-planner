@@ -1,4 +1,5 @@
 # day-planner
+I was able to fulfill all requirements below:
 
 ## User Story
 
@@ -25,3 +26,14 @@ THEN the text for that event is saved in local storage
 WHEN I refresh the page
 THEN the saved events persist
 ```
+
+# Screenshots
+
+## Inputing Data
+![day-planner](assets/img/input.png)
+
+## On Page Load After Input
+![day-planner](assets/img/afterreload.png)
+
+## Classes Change Relative To Time
+![day-planner](assets/img/relativeclasses.png)
