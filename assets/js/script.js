@@ -1,7 +1,8 @@
-// let time;
+var rootEl = $('#task');
+console.log(rootEl);
 // let task;
 
-// let timeArray = [];
+
 // let valueArray = [];
 $(document).ready(function () {
    
@@ -17,12 +18,9 @@ $(document).ready(function () {
     });
    
     //write a function to update the hours in the time blocks
-    var hourKey = JSON.parse(localStorage.getItem('time'));
-    var taskValue = JSON.parse(localStorage.getItem('task'));
-    var taskTimeObj = {
-        [hourKey]: taskValue 
-    };
-    console.log(taskTimeObj);
+    let timeArray = [];
+    timeArray.push(JSON.parse(localStorage.getItem('time')));
+    console.log(timeArray);
     // //get current time use moment
     var currentTime = moment().format("hh");
     $("#4a").text(currentTime);
@@ -30,21 +28,20 @@ $(document).ready(function () {
   
 
     // //loop over our time blocks hint (look up .each)
-
-    for (let i = 0; i < taskTimeObj.length; i++) {
-        console.log(taskTimeObj[i]);
-        // let oneHour = taskTimeObj[i];
-        // let oneTask = taskTimeObj.taskValue;
-        // console.log(oneHour);
-        // console.log('------------');
-        // console.log(oneTask);
-  
+    for (let i = 0; i < timeArray.length; i++) {
+        let hourNumber = timeArray[i].split('-');
+        var taskTime = hourNumber[1];
+        console.log(taskTime);
+        // //check to see if we have moved past the current time
+        // //if
+        // //addClass
+        // //addClass("past")
+       
+        if (taskTime < currentTime) {
+            console.log(time);
+            rootEl.addClass('bg-secondary', 'past');
+        }
     
-    // //check to see if we have moved past the current time
-
-    // //if
-    // //addClass
-    // //addClass("past")
 
     // //check to see if it is the current time
     // //else if
