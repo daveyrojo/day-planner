@@ -18,7 +18,7 @@ $(document).ready(function () {
         var time = $(this).parent().attr("id");
         
         //save them to localStorage
-        localStorage.setItem(time, JSON.stringify(task));    
+        localStorage.setItem(time, task);    
     });
    
     var currentTime = moment().format("HH");
