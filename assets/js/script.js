@@ -1,4 +1,7 @@
-let timeArray = [];
+// let time;
+// let task;
+
+// let timeArray = [];
 // let valueArray = [];
 $(document).ready(function () {
    
@@ -7,37 +10,38 @@ $(document).ready(function () {
         //grab my values for time and text
         var task = $(this).siblings(".task").val();
         var time = $(this).parent().attr("id");
-
+        // console.log(task, time);
         //save them to localStorage
         localStorage.setItem('time', JSON.stringify(time));
-
-        // localStorage.setItem('task', JSON.stringify(task)); <= to save textarea input
-        // console.log(time);
-        // console.log('--------------------');
-
-        // console.log(hourTask); <= do i want to try and make an obj???
-        // timeArray.push('time'); <===save time singular
-        // valueArray.push(task); <==to save task 
-        timeArray.push(JSON.parse(localStorage.getItem('time')));
+        localStorage.setItem('task', JSON.stringify(task));  
     });
-    console.log(timeArray);
-
+   
     //write a function to update the hours in the time blocks
-    for (let i = 0; i < timeArray.length; i++) {
-        let oneHour = time[i];
-        console.log(oneHour);
-
+    var hourKey = JSON.parse(localStorage.getItem('time'));
+    var taskValue = JSON.parse(localStorage.getItem('task'));
+    var taskTimeObj = {
+        [hourKey]: taskValue 
+    };
+    console.log(taskTimeObj);
     // //get current time use moment
-    var currentTime = moment().format("hh:mm:ss");
+    var currentTime = moment().format("hh");
     $("#4a").text(currentTime);
     console.log(currentTime);
-   
+  
 
     // //loop over our time blocks hint (look up .each)
-    // // $(placeholder for this line).each(function(){
 
+    for (let i = 0; i < taskTimeObj.length; i++) {
+        console.log(taskTimeObj[i]);
+        // let oneHour = taskTimeObj[i];
+        // let oneTask = taskTimeObj.taskValue;
+        // console.log(oneHour);
+        // console.log('------------');
+        // console.log(oneTask);
+  
     
-    // //check dto see if we have moved past the current time
+    // //check to see if we have moved past the current time
+
     // //if
     // //addClass
     // //addClass("past")
