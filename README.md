@@ -1,6 +1,8 @@
 # day-planner
 I was able to fulfill all requirements below:
 
+Deployed link: https://daveyrojo.github.io/day-planner/
+
 ## User Story
 
 ```md
